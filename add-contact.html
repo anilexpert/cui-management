@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Add Contact - Dashboard</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Select2 Bootstrap 4-->
+        <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+        <link href="vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">    
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i> 
+                                        Lock Screen
+                                    </a> 
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <div class="page-header">
+                        <div class="page-heading-top ">
+                            <!-- Page Heading -->
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                <div class="page-tabs my-2 my-md-0">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="admin-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="true">Admin</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="employee-tab" data-toggle="tab" href="#employee" role="tab" aria-controls="employee" aria-selected="false">Employee</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page-tools-right my-2 my-md-0">
+                                    <div class="active-switch d-inline-block mr-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="d-inline-block h6 text-dark mr-2">Active</span>
+                                            <!-- Rounded switch -->
+                                            <label class="switch">
+                                                <input type="checkbox" checked="">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown no-arrow d-inline-block">
+                                        <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action1</a>
+                                            <a class="dropdown-item" href="#">Action2</a>
+                                            <a class="dropdown-item" href="#">Action3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Add Contact -->
+                            <div class="col-sm-12 col-xl-12 col-lg-12 mb-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+                                                <div id="accordion" class="add-contacts-accordion">
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingOne">
+                                                            <a href="javascript:;" class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                Basic Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>First Name 
+                                                                                    <span class="required-fields text-danger">
+                                                                                        <i class="feather icon-star"></i>
+                                                                                    </span>
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Last Name 
+                                                                                    <span class="required-fields text-danger">
+                                                                                        <i class="feather icon-star"></i>
+                                                                                    </span>
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Mobile Number 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                    <label>
+                                                                                        Property Status
+                                                                                    </label>
+                                                                                </div>
+
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Customer
+                                                                                    </option>
+                                                                                    <option value="1">Owner</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Contact Type 
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Employee
+                                                                                    </option>
+                                                                                    <option value="1">Admin</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <a href="javascript:;" class="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                                Contact Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary Address Line 1
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary Address Line 2
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary State</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Select State
+                                                                                    </option>
+                                                                                    <option value="1">State 1</option>
+                                                                                    <option value="2">State 2</option>
+                                                                                    <option value="3">State 3</option>
+                                                                                    <option value="4">State 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary City
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Primary Zip 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Mobile Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Office Phone 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Email
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingThree">
+                                                            <a href="javascript:;" class="" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                                Additional Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Owner</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Select Owner
+                                                                                    </option>
+                                                                                    <option value="1">Owner 1</option>
+                                                                                    <option value="2">Owner 2</option>
+                                                                                    <option value="3">Owner 3</option>
+                                                                                    <option value="4">Owner 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary Address Line 1
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary Address Line 2
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary State</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Select State
+                                                                                    </option>
+                                                                                    <option value="1">State 1</option>
+                                                                                    <option value="2">State 2</option>
+                                                                                    <option value="3">State 3</option>
+                                                                                    <option value="4">State 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary City
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Secondary Zip 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Alternate Mobile Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    &nbsp; 
+                                                                                </label>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customCheckcrew">
+                                                                                    <label class="custom-control-label" for="customCheckcrew">Sub crew size</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-xl-12">
+                                                        <div class="card custom-blue-card">
+                                                            <div class="card-header">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h5 class="card-title m-0">Properties</h5>
+                                                                    <button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#AddPropertyModal">
+                                                                        <i class="feather icon-plus-circle"></i>
+                                                                        Add
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <!--<table class="table table-bordered myTable" width="100%" cellspacing="0">-->
+                                                                <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck-Pall">
+                                                                                    <label class="custom-control-label" for="customCheck-Pall">&nbsp; </label>
+                                                                                </div>
+                                                                            </th>
+                                                                            <th>
+                                                                                Property Name
+                                                                            </th>
+                                                                            <th>
+                                                                                Property Status
+                                                                            </th>
+                                                                            <th>
+                                                                                Account Owner
+                                                                            </th>
+                                                                            <th>
+                                                                                Address1
+                                                                            </th>
+                                                                            <th>
+                                                                                Billing Contact
+                                                                            </th>
+                                                                            <th>
+                                                                                Primary Contact
+                                                                            </th>
+                                                                            <th>
+                                                                                Action
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                -
+                                                                            </td>
+                                                                            <td>
+                                                                                -
+                                                                            </td>
+                                                                            <td>-</td>
+                                                                            <td>-</td>
+                                                                            <td>-</td>
+                                                                            <td>-</td>
+                                                                            <td>-</td>
+                                                                            <td>
+                                                                                -
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer mt-3 text-center">
+                                                    <a href="contacts.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                    <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab">
+                                                <div class="card custom-blue-card mb-3">
+                                                    <div class="card-header">
+                                                        <a href="javascript:;" class="" >
+                                                            Add Employee
+                                                        </a>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-4 col-lg-3">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Snow Technician Type
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Choose...
+                                                                            </option>
+                                                                            <option value="1">Plow/Deicing Truck Operator</option>
+                                                                            <option value="2">Equipment Operator</option>
+                                                                            <option value="3">Deicing Truck</option>
+                                                                            <option value="4">Shovel Technician</option>
+                                                                            <option value="5">Supervisor</option>
+                                                                            <option value="6">Truck Operator</option>
+                                                                            <option value="7">Shovel Technician</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4 col-lg-3">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Land Technician Type
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Choose...
+                                                                            </option> 
+                                                                            <option value="1">Construction</option>
+                                                                            <option value="2">Equipment Operator</option>
+                                                                            <option value="3">Irrigation</option>
+                                                                            <option value="4">Irrigation</option>
+                                                                            <option value="5">Other</option>
+                                                                            <option value="6">Maintenance</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4 col-lg-3">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Pin Code 
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4 col-lg-3">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            DOB
+                                                                        </label>
+                                                                        <input type="date" class="form-control form-custom" value="">
+                                                                    </div>
+                                                                </div> 
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-12 col-xl-6 mb-3">
+                                                        <div class="card custom-blue-card h-100">
+                                                            <div class="card-header">
+                                                                <a href="javascript:;" class="" >
+                                                                    Driver's License
+                                                                </a>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    State
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">PA</option>
+                                                                                    <option value="2">WV</option>
+                                                                                    <option value="3">MI</option>
+                                                                                    <option value="4">IN</option>
+                                                                                    <option value="5">
+                                                                                        OH
+                                                                                    </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Expiration Date
+                                                                                </label>
+                                                                                <input type="date" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Approved
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">
+                                                                                        Yes
+                                                                                    </option>
+                                                                                    <option value="2">No</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-6 mb-3">
+                                                        <div class="card custom-blue-card h-100">
+                                                            <div class="card-header">
+                                                                <a href="javascript:;" class="" >
+                                                                    CUI Email
+                                                                </a>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-6 col-lg-6">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Email Address
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-12 col-md-6 col-lg-6">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Password
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-12 col-xl-6">
+                                                        <div class="card custom-blue-card mb-3">
+                                                            <div class="card-header">
+                                                                <a href="javascript:;" class="" >
+                                                                    Pay Code Name
+                                                                </a>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <form>
+
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-2 col-lg-1">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <label>
+                                                                                    1
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6 col-md-4 col-lg-5">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Type
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">Post-Construction Clean-Up</option>
+                                                                                    <option value="2">Hard Surface Floor Care</option>
+                                                                                    <option value="3">Hard Surface Floor Care</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Rate
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-3 col-md-2 col-lg-2">
+                                                                            <label>&nbsp;</label>
+                                                                            <div class="form-group">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                    <!--<span class="d-none d-lg-inline-block">Delete</span>-->
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-2 col-lg-1">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <label>
+                                                                                    2
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6 col-md-4 col-lg-5">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Type
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">Post-Construction Clean-Up</option>
+                                                                                    <option value="2">Hard Surface Floor Care</option>
+                                                                                    <option value="3">Hard Surface Floor Care</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Rate
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-3 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                    <!--<span class="d-none d-lg-inline-block">Delete</span>-->
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-2 col-lg-1">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <label>
+                                                                                    3
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6 col-md-4 col-lg-5">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Type
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">Post-Construction Clean-Up</option>
+                                                                                    <option value="2">Hard Surface Floor Care</option>
+                                                                                    <option value="3">Hard Surface Floor Care</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Rate
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-3 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                    <!--<span class="d-none d-lg-inline-block">Delete</span>-->
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-2 col-lg-1">
+                                                                            <div class="form-group mt-md-4">
+                                                                                <label>
+                                                                                    4
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6 col-md-4 col-lg-5">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Type
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Choose...
+                                                                                    </option>
+                                                                                    <option value="1">Post-Construction Clean-Up</option>
+                                                                                    <option value="2">Hard Surface Floor Care</option>
+                                                                                    <option value="3">Hard Surface Floor Care</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Rate
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-3 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-3">
+                                                                                <button type="button" class="btn btn-block btn-soft-blue">
+                                                                                    <i class="feather icon-plus-circle"></i>
+                                                                                    <!--<span class="d-none d-lg-inline-block">Delete</span>-->
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-6">
+                                                        <div class="card custom-blue-card mb-3">
+                                                            <div class="card-header">
+                                                                <a href="javascript:;" class="" >
+                                                                    Credit Cards
+                                                                </a>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-1 col-lg-1">
+                                                                            <div class="form-group mt-md-3">
+                                                                                <label>
+                                                                                    1
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-8 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    CVC
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-8 col-md-3 col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Expiration Date
+                                                                                </label>
+                                                                                <input type="date" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-3">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-1 col-lg-1">
+                                                                            <div class="form-group mt-md-3">
+                                                                                <label>
+                                                                                    2
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-8 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    CVC
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-8 col-md-3 col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Expiration Date
+                                                                                </label>
+                                                                                <input type="date" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-3">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-1 col-lg-1">
+                                                                            <div class="form-group mt-md-3">
+                                                                                <label>
+                                                                                    3
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-8 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    CVC
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-8 col-md-3 col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Expiration Date
+                                                                                </label>
+                                                                                <input type="date" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-3">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-1 col-lg-1">
+                                                                            <div class="form-group mt-md-3">
+                                                                                <label>
+                                                                                    4
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-8 col-md-4 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    CVC
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-8 col-md-3 col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Expiration Date
+                                                                                </label>
+                                                                                <input type="date" class="form-control form-custom" value="">
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="col-4 col-md-2 col-lg-2">
+                                                                            <div class="form-group mt-3">
+                                                                                <button type="button" class="btn btn-block btn-red-soft">
+                                                                                    <i class="feather icon-trash"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer text-center">
+                                                    <a href="" class="btn btn-danger" role="button">Cancel</a>
+                                                    <a href="view-contact.html" class="btn btn-success" role="button">Submit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+                
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Property Modal-->
+        <div class="modal fade custom-modal" id="AddPropertyModal" tabindex="-1" role="dialog" aria-labelledby="AddPropertyLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="AddPropertyLabel">Add Property</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        &nbsp;
+                                    </th>
+                                    <th>
+                                        Property Name
+                                    </th>
+                                    <th>
+                                        Account Owner
+                                    </th>
+
+                                    <th>
+                                        Primary Contact
+                                    </th>
+                                    <th>
+                                        &nbsp;
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="example1">
+                                            <label class="custom-control-label" for="customCheck1">&nbsp;</label>
+                                        </div> 
+                                    </td>
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                1615 Bridget Lane
+                                            </option>
+                                            <option value="1">
+                                                1635 Curry Dr
+                                            </option>
+                                            <option value="2">
+                                                29280 North Park Blvd
+                                            </option>
+                                            <option value="3">
+                                                3128 Glenbrook Dr.
+                                            </option>
+                                            <option value="4">
+                                                5232 Farnhurst Rd
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td> 
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Adam Clark
+                                            </option>
+                                            <option value="1">
+                                                Jessie Clarcson
+                                            </option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                David Richards
+                                            </option>
+                                            <option value="1">
+                                                Lawrence Barrett
+                                            </option>
+                                            <option value="2">
+                                                Mike Carmer
+                                            </option>
+                                            <option value="3">
+                                                Sean Sanders
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-green-soft" type="button">Assigned</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2" name="example2" checked="">
+                                            <label class="custom-control-label" for="customCheck2">&nbsp;</label>
+                                        </div> 
+                                    </td>
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                1635 Curry Dr
+                                            </option>
+                                            <option value="1">
+                                                1615 Bridget Lane
+                                            </option>
+                                            <option value="2">
+                                                29280 North Park Blvd
+                                            </option>
+                                            <option value="3">
+                                                3128 Glenbrook Dr.
+                                            </option>
+                                            <option value="4">
+                                                5232 Farnhurst Rd
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td> 
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Jessie Clarcson
+                                            </option>
+                                            <option value="1">
+                                                Adam Clark
+                                            </option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Mike Carmer
+                                            </option>
+                                            <option value="1">
+                                                Lawrence Barrett
+                                            </option>
+                                            <option value="2">
+                                                David Richards
+                                            </option>
+                                            <option value="3">
+                                                Sean Sanders
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-red-soft" type="button">Decline</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck3" name="example3">
+                                            <label class="custom-control-label" for="customCheck3">&nbsp;</label>
+                                        </div> 
+                                    </td>
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Choose...
+                                            </option>
+                                            <option value="1">
+                                                1615 Bridget Lane
+                                            </option>
+                                            <option value="2">
+                                                1635 Curry Dr
+                                            </option>
+                                            <option value="3">
+                                                29280 North Park Blvd
+                                            </option>
+                                            <option value="4">
+                                                3128 Glenbrook Dr.
+                                            </option>
+                                            <option value="5">
+                                                5232 Farnhurst Rd
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td> 
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Choose...
+                                            </option>
+                                            <option value="1">
+                                                Adam Clark
+                                            </option>
+                                            <option value="2">
+                                                Jessie Clarcson
+                                            </option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-control form-control-sm">
+                                            <option selected="">
+                                                Choose...
+                                            </option>
+                                            <option value="1">
+                                                David Richards
+                                            </option>
+                                            <option value="2">
+                                                Lawrence Barrett
+                                            </option>
+                                            <option value="3">
+                                                Mike Carmer
+                                            </option>
+                                            <option value="4">
+                                                Sean Sanders
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-soft-blue" type="button">Assign</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--                    <div class="modal-footer justify-content-center">
+                                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                                            <a href="#" class="btn btn-success" role="button" data-dismiss="modal">Submit</a>
+                                        </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Select2 Bootstrap 4-->
+        <script src="vendor/select2/js/select2.min.js"></script>
+        <script src="vendor/select2/js/select2-script.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.area').slimscroll({
+                    height: '190px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+    </body>
+
+</html>

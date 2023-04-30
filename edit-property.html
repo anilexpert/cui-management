@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Edit Property - Dashboard</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Select2 Bootstrap 4-->
+        <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+        <link href="vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">    
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+        <link href="css/cui-property.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+
+
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <div class="page-header">
+                        <div class="page-heading-top ">
+                            <!-- Page Heading -->
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                <div class="page-tabs my-2 my-md-0">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="property-tab" data-toggle="tab" href="#property" role="tab" aria-controls="property" aria-selected="true">Property</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Account</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page-tools-right my-2 my-md-0">
+                                    <div class="dropdown no-arrow d-inline-block">
+                                        <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action1</a>
+                                            <a class="dropdown-item" href="#">Action2</a>
+                                            <a class="dropdown-item" href="#">Action3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Add Contact -->
+                            <div class="col-sm-12 col-xl-12 col-lg-12 mb-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="property" role="tabpanel" aria-labelledby="property-tab">
+                                                <form>
+                                                    <div class="card mb-3 mb-lg-4">
+                                                        <div class="card-header">
+                                                            <h5 class="m-0 text-dark">
+                                                                Property Information
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Property Name
+                                                                        </label>
+                                                                        <input type="text" name="propertyname" class="form-control form-custom" value="1615 Bridget Lane">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Property Name Abbreviation
+                                                                        </label>
+                                                                        <input type="text" name="propertynameabr" class="form-control form-custom" value="1615 Bridget Lane">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Property Number  
+                                                                        </label>
+                                                                        <input type="text" name="propertynumber" class="form-control form-custom" value="PR-457985">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Branch 
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Branch 1
+                                                                            </option>
+                                                                            <option value="1">Branch 1</option>
+                                                                            <option value="2">Branch 2</option>
+                                                                            <option value="3">Branch 3</option>
+                                                                            <option value="4">Branch 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="checkboxes my-4">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="SeparateInvoices" checked="">
+                                                                            <label class="custom-control-label" for="SeparateInvoices">Separate Invoices
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="PaperlessInvoices" checked="">
+                                                                            <label class="custom-control-label" for="PaperlessInvoices">Paperless Invoices
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Property 
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+
+                                                                            <option value="1" selected="">Customer</option>
+                                                                            <option value="2">Staff</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Account Owner
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Adam Clark
+                                                                            </option>
+                                                                            <option value="1">Adam Clark</option>
+                                                                            <option value="2">Adam Clark</option>
+                                                                            <option value="3">Adam Clark</option>
+                                                                            <option value="4">Adam Clark</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Tax Jurisdiction 
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                4.5%
+                                                                            </option>
+                                                                            <option value="1">4.5%</option>
+                                                                            <option value="2">5.4%</option>
+                                                                            <option value="3">6.3%</option>
+                                                                            <option value="4">7.4%</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Payment Terms
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Net 30
+                                                                            </option>
+                                                                            <option value="1">Net 30</option>
+                                                                            <option value="2">Net 30</option>
+                                                                            <option value="3">Net 30</option>
+                                                                            <option value="4">Net 30</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Address Line 1
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="1615 Bridget Lane">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Address Line 2
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="1615 Bridget Lane">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            City
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="Twinsburg">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            State
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                OH 
+                                                                            </option>
+                                                                            <option value="1">State 1</option>
+                                                                            <option value="2">State 2</option>
+                                                                            <option value="3">State 3</option>
+                                                                            <option value="4">State 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Zip 
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="44087">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            County 
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="#REF!">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Building Code/ District Code 
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="88888">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Building Cost Center
+                                                                        </label>
+                                                                        <input type="text" class="form-control form-custom" value="99999">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Property Notes
+                                                                        </label>
+                                                                        <textarea class="form-control" placeholder="" rows="3"> Be carefull not to scalp area to right of driveway, use a push mower or string trimmer. Edge Driveway & sidewalk once a month with metal blade</textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Operation Notes
+                                                                        </label>
+                                                                        <textarea class="form-control" placeholder="" rows="3"> Be carefull not to scalp area to right of driveway, use a push mower or string trimmer. Edge Driveway & sidewalk once a month with metal blade</textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3 mb-lg-4">
+                                                        <div class="card-header" >
+                                                            <h5 class="m-0 text-dark">
+                                                                Contact Information
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <div class="d-block">
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <label>Primary Contact</label>
+                                                                                <a href="#" class="d-inline-block">
+                                                                                    <i class="feather icon-plus-circle font-weight-bold">
+
+                                                                                    </i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Mike Carmer
+                                                                            </option>
+                                                                            <option value="1">Mike Carmer</option>
+                                                                            <option value="2">David Richards</option>
+                                                                            <option value="3">Sean Sanders</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <div class="d-block">
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <label>Billing Contact</label>
+                                                                                <a href="#" class="d-inline-block">
+                                                                                    <i class="feather icon-plus-circle font-weight-bold">
+
+                                                                                    </i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                David Richards
+                                                                            </option>
+                                                                            <option value="1">Mike Carmer</option>
+                                                                            <option value="2">David Richards</option>
+                                                                            <option value="3">Sean Sanders</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <div class="d-block">
+                                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                                <label>Other Contact</label>
+                                                                                <a href="#" class="d-inline-block">
+                                                                                    <i class="feather icon-plus-circle font-weight-bold">
+
+                                                                                    </i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Sean Sanders
+                                                                            </option>
+                                                                            <option value="1">Mike Carmer</option>
+                                                                            <option value="2">David Richards</option>
+                                                                            <option value="3">Sean Sanders</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Company</label>
+                                                                        <input type="text" class="form-control form-custom" value="ABC">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3 mb-lg-4">
+                                                        <div class="card-header">
+                                                            <h5 class="m-0 text-dark">
+                                                                Additional Information
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Lead Source</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Lead Source
+                                                                            </option>
+                                                                            <option value="1">Lead Source 1</option>
+                                                                            <option value="2">Lead Source 2</option>
+                                                                            <option value="3">Lead Source 3</option>
+                                                                            <option value="4">Lead Source 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Industry</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Residential
+                                                                            </option>
+                                                                            <option value="1">Office</option>
+                                                                            <option value="2">Condominium</option>
+                                                                            <option value="3">Mixed Use</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Website
+                                                                        </label>
+                                                                        <input type="text" name="website" class="form-control form-custom" placeholder="www.cuisite.com">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Competitor</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Competitor 1
+                                                                            </option>
+                                                                            <option value="1">Competitor 1</option>
+                                                                            <option value="2">Competitor 2</option>
+                                                                            <option value="3">Competitor 3</option>
+                                                                            <option value="4">Competitor 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3 mb-lg-4">
+                                                        <div class="card-header">
+                                                            <h5 class="m-0 text-dark">
+                                                                Custom Fields
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>County</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Select one...
+                                                                            </option>
+                                                                            <option value="1">County 1</option>
+                                                                            <option value="2">County 2</option>
+                                                                            <option value="3">County 3</option>
+                                                                            <option value="4">County 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Building Code/District Code</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Select one...
+                                                                            </option>
+                                                                            <option value="1">Building Code[54687]</option>
+                                                                            <option value="2">Building Code[54688]</option>
+                                                                            <option value="3">Building Code[54689]</option>
+                                                                            <option value="4">Building Code[54690]</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>Building Cost Center</label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Select one...
+                                                                            </option>
+                                                                            <option value="1">Building Cost Center 1</option>
+                                                                            <option value="2">Building Cost Center 2</option>
+                                                                            <option value="3">Building Cost Center 3</option>
+                                                                            <option value="4">Building Cost Center 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card-footer text-center">
+                                                        <a href="property-listing.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                        <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                                                <form>
+                                                    <div class="card mb-3 mb-lg-4">
+                                                        <div class="card-header">
+                                                            <h5 class="m-0 text-dark">
+                                                                Account Information
+                                                            </h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Account
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                1615 Bridget Lane
+                                                                            </option>
+                                                                            <option value="1">Account 1</option>
+                                                                            <option value="2">Account 2</option>
+                                                                            <option value="3">Account 3</option>
+                                                                            <option value="4">Account 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Primary Contact 
+                                                                        </label>
+                                                                        <input type="text" name="primarycontact " class="form-control form-custom" value="Mike Carmer">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Account Owner
+                                                                        </label>
+                                                                        <select class="form-control form-custom">
+                                                                            <option selected="">
+                                                                                Adam Clark
+                                                                            </option>
+                                                                            <option value="1">Account owner 1</option>
+                                                                            <option value="2">Account owner 2</option>
+                                                                            <option value="3">Account owner 3</option>
+                                                                            <option value="4">Account owner 4</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Earned Revenue 
+                                                                            <a href="#" title="Earned Revenue" data-toggle="popover" data-trigger="focus" data-content="Some content inside the popover">
+                                                                                <i class="feather icon-info" ></i>
+                                                                            </a>
+                                                                        </label>
+                                                                        <input type="text" name="earnedrevenue" class="form-control form-custom" value="$2000">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Account Balance
+                                                                        </label>
+                                                                        <input type="text" name="earnedrevenue" class="form-control form-custom" value="$1000">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            Gross Margin 
+                                                                            <a href="#" title="Gross Margin" data-toggle="popover" data-trigger="focus" data-content="Some content inside the popover">
+                                                                                <i class="feather icon-info" ></i>
+                                                                            </a>
+                                                                        </label>
+                                                                        <input type="text" name="earnedrevenue" class="form-control form-custom" value="$1000">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer text-center">
+                                                            <a href="property-listing.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                            <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                        </div>
+                                                    </div> 
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+        <!-- Select2 Bootstrap 4-->
+        <script src="vendor/select2/js/select2.min.js"></script>
+        <script src="vendor/select2/js/select2-script.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.area').slimscroll({
+                    height: '180px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>

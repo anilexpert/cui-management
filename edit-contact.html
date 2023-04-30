@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Edit Contact - Dashboard</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <div class="page-header">
+                        <div class="page-heading-top ">
+                            <!-- Page Heading -->
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                                <div class="page-tabs my-2 my-md-0">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="admin-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="true">Admin</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="employee-tab" data-toggle="tab" href="#employee" role="tab" aria-controls="employee" aria-selected="false">Employee</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="page-tools-right my-2 my-md-0">
+                                    <div class="active-switch d-inline-block mr-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="d-inline-block h6 text-dark mr-2">Active</span>
+                                            <!-- Rounded switch -->
+                                            <label class="switch">
+                                                <input type="checkbox" checked="">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown no-arrow d-inline-block">
+                                        <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action1</a>
+                                            <a class="dropdown-item" href="#">Action2</a>
+                                            <a class="dropdown-item" href="#">Action3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Add Contact -->
+                            <div class="col-sm-12 col-xl-8 col-lg-8 mb-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+                                                <div id="accordion" class="add-contacts-accordion">
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingOne">
+                                                            <a href="javascript:;" class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                Basic Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>First Name 
+                                                                                    <span class="required-fields text-danger">
+                                                                                        <i class="feather icon-star"></i>
+                                                                                    </span>
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="Jeff">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Last Name 
+                                                                                    <span class="required-fields text-danger">
+                                                                                        <i class="feather icon-star"></i>
+                                                                                    </span>
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="Harcourt">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--                                                                        <div class="col-12 col-md-4">
+                                                                                                                                                    <div class="form-group">
+                                                                                                                                                        <label>
+                                                                                                                                                            Email 
+                                                                                                                                                        </label>
+                                                                                                                                                        <input type="email" class="form-control form-custom" value="jeffharcourt@yourdomain.com">
+                                                                                                                                                    </div>
+                                                                                                                                                </div>-->
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Mobile Number 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="(425) 555-1212">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                    <label>
+                                                                                        Property Status
+                                                                                    </label>
+                                                                                </div>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Customer
+                                                                                    </option>
+                                                                                    <option value="1">Owner</option>
+                                                                                </select>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Contact Type 
+                                                                                </label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Admin
+                                                                                    </option>
+                                                                                    <option value="1">Employee</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="card-footer text-center">
+                                                                <a href="contacts.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                                <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <a href="javascript:;" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                Contact Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary Address Line 1
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="Cecilia Chapman">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary Address Line 2
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="711-2880 Nulla St">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary State</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Northeastern
+                                                                                    </option>
+                                                                                    <option value="1">State 1</option>
+                                                                                    <option value="2">State 2</option>
+                                                                                    <option value="3">State 3</option>
+                                                                                    <option value="4">State 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Primary City
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="New York">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Primary Zip 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="12345">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Mobile Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="(425) 555-1212">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Office Phone 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="(555) 555-1234">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Email
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="jeffharcourt@yourdomain.com">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="card-footer text-center">
+                                                                <a href="contacts.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                                <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card mb-3">
+                                                        <div class="card-header" id="headingThree">
+                                                            <a href="javascript:;" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                Additional Information
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Owner</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Mike Carmer
+                                                                                    </option>
+                                                                                    <option value="1">Owner 1</option>
+                                                                                    <option value="2">Owner 2</option>
+                                                                                    <option value="3">Owner 3</option>
+                                                                                    <option value="4">Owner 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary Address Line 1
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="1615 Bridget Lane">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary Address Line 2
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="Nulla St">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary State</label>
+                                                                                <select class="form-control form-custom">
+                                                                                    <option selected="">
+                                                                                        Northeastern
+                                                                                    </option>
+                                                                                    <option value="1">State 1</option>
+                                                                                    <option value="2">State 2</option>
+                                                                                    <option value="3">State 3</option>
+                                                                                    <option value="4">State 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>Secondary City
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="New York">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Secondary Zip 
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="12345">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    Alternate Mobile Number
+                                                                                </label>
+                                                                                <input type="text" class="form-control form-custom" value="(425) 555-1212">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label>
+                                                                                    &nbsp; 
+                                                                                </label>
+                                                                                <div class="custom-control custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customCheckcrew">
+                                                                                    <label class="custom-control-label" for="customCheckcrew">Sub crew size</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="card-footer text-center">
+                                                                <a href="contacts.html" role="button" class="btn btn-sm btn-success">Save</a>
+                                                                <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab">
+                                                <h5 class="text-center">
+                                                    Employee
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-xl-4 col-lg-4 mb-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body p-0">
+                                        <div class="card border-0">
+                                            <div class="card-header border-0 bg-transparent">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <h6 class="text-dark">
+                                                            All Activity
+                                                        </h6>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <a href="#" class="btn btn-sm btn-soft-blue" data-toggle="modal" data-target="#AddActivityModal">
+                                                            <i class="feather icon-plus-circle"></i>
+                                                            Add
+                                                        </a>
+                                                        <div class="dropdown no-arrow d-inline-block ml-2">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ViewactivityModal">View</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#EditActivityModal">Edit</a>
+                                                                <a class="dropdown-item" href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body py-0">
+                                                <div class="activity mb-2" >
+                                                    <div class="area d-block">
+                                                        <div class="activity-list">
+                                                            <div class="activity-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 activity-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                            <label class="custom-control-label" for="customCheck1">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM by Jack Rogers
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="activity-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewactivityModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="activity-list">
+                                                            <div class="activity-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 activity-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                            <label class="custom-control-label" for="customCheck2">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM by Jack Rogers
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="activity-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success"  data-toggle="modal" data-target="#ViewactivityModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="activity-list">
+                                                            <div class="activity-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 activity-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                            <label class="custom-control-label" for="customCheck3">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM by Jack Rogers
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="activity-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewactivityModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="activity-list">
+                                                            <div class="activity-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 activity-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                            <label class="custom-control-label" for="customCheck3">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM by Jack Rogers
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="activity-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewactivityModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-block mt-2">
+                                                        <a href="">
+                                                            Show More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card border-0">
+                                            <div class="card-header border-0 bg-transparent">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <h6 class="text-dark">
+                                                            All Notes
+                                                        </h6>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <a href="#" class="btn btn-sm btn-soft-blue" data-toggle="modal" data-target="#AddNoteModal">
+                                                            <i class="feather icon-plus-circle"></i>
+                                                            Add
+                                                        </a>
+                                                        <div class="dropdown no-arrow d-inline-block ml-2">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ViewNoteModal">View</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#EditNoteModal">Edit</a>
+                                                                <a class="dropdown-item" href="#">Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body py-0">
+                                                <div class="notes mb-2">
+                                                    <div class="area d-block">
+                                                        <div class="notes-list">
+                                                            <div class="notes-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 notes-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                                            <label class="custom-control-label" for="customCheck4">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="notes-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewNoteModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notes-list">
+                                                            <div class="notes-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 notes-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                                            <label class="custom-control-label" for="customCheck4">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="notes-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewNoteModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notes-list">
+                                                            <div class="notes-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 notes-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                                                            <label class="custom-control-label" for="customCheck5">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="notes-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewNoteModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notes-list">
+                                                            <div class="notes-list-item d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex">
+                                                                    <div class="mr-1 notes-check">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                                                            <label class="custom-control-label" for="customCheck6">&nbsp; </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-dark m-0">Craft a headline that is informative</p>
+                                                                        <p class="mb-0 small">
+                                                                            <i>
+                                                                                01/06/2021 12:55 PM
+                                                                            </i>
+                                                                        </p>
+                                                                    </div>
+                                                                </div> 
+                                                                <div class="notes-check-action">
+                                                                    <a href="#" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#ViewNoteModal">
+                                                                        View
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-block mt-2">
+                                                        <a href="">
+                                                            Show More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-xl-12">
+                                <div class="card shadow-sm">
+                                    <div class="card-header">
+                                        <h5 class="card-title m-0 text-dark">Properties</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <!--<table class="table table-bordered myTable" width="100%" cellspacing="0">-->
+                                        <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-Pall">
+                                                            <label class="custom-control-label" for="customCheck-Pall">&nbsp; </label>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        Property Name
+                                                    </th>
+                                                    <th>
+                                                        Property Status
+                                                    </th>
+                                                    <th>
+                                                        Account Owner
+                                                    </th>
+                                                    <th>
+                                                        Address1
+                                                    </th>
+                                                    <th>
+                                                        Billing Contact
+                                                    </th>
+                                                    <th>
+                                                        Primary Contact
+                                                    </th>
+                                                    <th>
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P1">
+                                                            <label class="custom-control-label" for="customCheck-P1">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        1615 Bridget Lane
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>1615 Bridget Lane</td>
+                                                    <td>Mike Carmer</td>
+                                                    <td>Mike Carmer</td>
+                                                    <td>
+                                                        <a href="property-detail.html" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P2">
+                                                            <label class="custom-control-label" for="customCheck-P2">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        1635 Curry Dr
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>1615 Bridget Lane</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Note Modal-->
+        <div class="modal fade custom-modal" id="AddNoteModal" tabindex="-1" role="dialog" aria-labelledby="AddNoteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="AddNoteModalLabel">Add Note</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="form-control" rows="4"></textarea>
+                                        <div class="d-block mt-2">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-sm btn-secondary btn-file">
+                                                    <i class="feather icon-paperclip"></i>
+                                                    Attachments
+                                                    <input type="file">
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                    <i class="feather icon-paperclip"></i>
+                                                    <span class="ml-2">
+                                                        0
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Note Date</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="feather icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a class="btn btn-sm btn-primary" href="add-contact.html">Submit</a>
+                        <button class="btn btn-sm btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Note Modal-->
+        <div class="modal fade custom-modal" id="EditNoteModal" tabindex="-1" role="dialog" aria-labelledby="EditNoteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EditNoteModalLabel">Add Note</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" value="Craft a headline that is informative ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="form-control" rows="4">Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose. Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose.</textarea>
+                                        <div class="d-block mt-2">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-sm btn-secondary btn-file">
+                                                    <i class="feather icon-paperclip"></i>
+                                                    Attachments
+                                                    <input type="file">
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                    <i class="feather icon-paperclip"></i>
+                                                    <span class="ml-2">
+                                                        5
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="attachements-edit d-block mt-2">
+                                            <div class="d-flex align-items-center attachements-list mb-2">
+                                                <a href="#" class="d-inline-block" title="torando-logo-lglnwEI2KhVEEF2dkj.png">
+                                                    torando-logo-lglnwEI2KhVEEF2dkj.png
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </div>
+                                            <div class="d-flex align-items-center attachements-list mb-2">
+                                                <a href="#" class="d-inline-block" title="torando-logo-lglnwEI2KhVEEF2dkj.png">
+                                                    torando-logo-lglnwEI2KhVEEF2dkj.png
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </div>
+                                            <div class="d-flex align-items-center attachements-list mb-2">
+                                                <a href="#" class="d-inline-block" title="torando-logo-lglnwEI2KhVEEF2dkj.png">
+                                                    torando-logo-lglnwEI2KhVEEF2dkj.png
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </div>
+                                            <div class="d-flex align-items-center attachements-list mb-2">
+                                                <a href="#" class="d-inline-block" title="torando-logo-lglnwEI2KhVEEF2dkj.png">
+                                                    torando-logo-lglnwEI2KhVEEF2dkj.png
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </div>
+                                            <div class="d-flex align-items-center attachements-list mb-2">
+                                                <a href="#" class="d-inline-block" title="torando-logo-lglnwEI2KhVEEF2dkj.png">
+                                                    torando-logo-lglnwEI2KhVEEF2dkj.png
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Note Date</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="feather icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control" value="2021-06-07">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a class="btn btn-sm btn-primary" href="add-contact.html">Submit</a>
+                        <button class="btn btn-sm btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Note Modal-->
+        <div class="modal fade custom-modal" id="ViewNoteModal" tabindex="-1" role="dialog" aria-labelledby="ViewNoteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ViewNoteModalLabel">View Note</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="view-notes">
+                            <h6 class="text-dark">
+                                Craft a headline that is informative
+                            </h6>
+                            <p>
+                                Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose. Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose.
+                            </p>
+                        </div>
+                        <div class="view-notes mt-2">
+                            <img src="img/torando-logo-lg.png" class="img-thumbnail mr-2 rounded" alt="image" style="max-height: 40px;">
+                            <img src="img/torando-logo-lg.png" class="img-thumbnail mr-2 rounded" alt="image" style="max-height: 40px;">
+                            <img src="img/torando-logo-lg.png" class="img-thumbnail mr-2 rounded" alt="image" style="max-height: 40px;">
+                            <img src="img/torando-logo-lg.png" class="img-thumbnail mr-2 rounded" alt="image" style="max-height: 40px;">
+                            <img src="img/torando-logo-lg.png" class="img-thumbnail mr-2 rounded" alt="image" style="max-height: 40px;">
+                        </div>
+                        <div class="view-notes-times mt-2 text-dark">
+                            <i class="">
+                                01/06/2021 12:55 PM
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Activity Modal-->
+        <div class="modal fade custom-modal" id="AddActivityModal" tabindex="-1" role="dialog" aria-labelledby="AddActivityModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="AddActivityModalLabel">Add Activity</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Activity Date</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="feather icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label class="mr-3">Messages to</label>
+                                        <div class="custom-control custom-control-inline custom-checkbox mr-2">
+                                            <input type="checkbox" class="custom-control-input" id="customChecka1">
+                                            <label class="custom-control-label" for="customChecka1">Customer </label>
+                                        </div>
+                                        <div class="custom-control custom-control-inline custom-checkbox mr-2">
+                                            <input type="checkbox" class="custom-control-input" id="customChecka2">
+                                            <label class="custom-control-label" for="customChecka2">Staff </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a class="btn btn-sm btn-primary" href="add-contact.html">Submit</a>
+                        <button class="btn btn-sm btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Edit Activity Modal-->
+        <div class="modal fade custom-modal" id="EditActivityModal" tabindex="-1" role="dialog" aria-labelledby="EditActivityModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EditActivityModalLabel">Edit Activity</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" value="Craft a headline that is informative">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="form-control" rows="4">Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose. Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose. </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>Activity Date</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="feather icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control" value="2021-06-07">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group">
+                                        <label class="mr-3">Messages to</label>
+                                        <div class="custom-control custom-control-inline custom-checkbox mr-2">
+                                            <input type="checkbox" class="custom-control-input" id="customChecka1" checked="checked">
+                                            <label class="custom-control-label" for="customChecka1">Customer </label>
+                                        </div>
+                                        <div class="custom-control custom-control-inline custom-checkbox mr-2">
+                                            <input type="checkbox" class="custom-control-input" id="customChecka2" checked="checked">
+                                            <label class="custom-control-label" for="customChecka2">Staff </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a class="btn btn-sm btn-primary" href="add-contact.html">Submit</a>
+                        <button class="btn btn-sm btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- View Activity Modal-->
+        <div class="modal fade custom-modal" id="ViewactivityModal" tabindex="-1" role="dialog" aria-labelledby="ViewactivityModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ViewactivityModalLabel">View Activity</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="feather icon-x-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="view-notes">
+                            <h6 class="text-dark">
+                                Craft a headline that is informative
+                            </h6>
+                            <p>
+                                Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose. Pitstop creates quick email campaigns. We help to strengthen your brand for your every purpose.
+                            </p>
+                        </div>
+                        <div class="messages-to d-block text-dark">
+                            <i>Pat Evers</i> has an upcoming task with <i>Jack Roger</i>
+                        </div>
+                        <div class="view-notes-times mt-2 d-block">
+                            <i class="">
+                                01/06/2021 12:55 PM by  Super Admin 
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.area').slimscroll({
+                    height: '190px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+    </body>
+
+</html>

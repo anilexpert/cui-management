@@ -1,0 +1,60 @@
+.page-tools-top .right-tools select.form-control, .page-tools-top .right-tools .select2-container{
+    width: 180px!important; 
+}
+.page-tools-top .select2-container--bootstrap4.select2-container--focus .select2-selection,
+.page-tools-top .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered,
+.page-tools-top select.form-control{
+    background-color: #fff!important;
+    border-radius: 6px!important;
+}
+.advance-filter .dropdown .dropdown-menu,
+.advance-displayfilter .dropdown .dropdown-menu{
+    min-width: 800px;
+    padding: 0;
+}
+.page-tools-top .right-tools select.form-control, .page-tools-top .right-tools .select2-container {
+    margin-right: 10px;
+}
+.page-tools-top .right-tools select.form-control, 
+.page-tools-top .right-tools .select2-container {
+    margin-right: 10px;
+}
+.page-tools-top .right-tools select.form-control:last-child, 
+.page-tools-top .right-tools .select2-container:last-child {
+    margin-right: 0px;
+}
+.advance-filter .dropdown .dropdown-menu .filter-body,
+.advance-displayfilter .dropdown .dropdown-menu .filter-body{
+    padding: 14px;
+}
+
+@media (max-width: 768px) {
+   .advance-filter .dropdown .dropdown-menu,
+    .advance-displayfilter .dropdown .dropdown-menu,
+    .advance-filter .filter-box, .advance-displayfilter filter-box{
+        min-width: 600px;
+        width: 600px;
+    } 
+    .page-tools-top .right-tools select.form-control, .page-tools-top .right-tools .select2-container{
+        width: 150px!important; 
+    }
+}
+
+@media (max-width: 767px) {
+    .advance-filter .dropdown .dropdown-menu,
+    .advance-displayfilter .dropdown .dropdown-menu,
+    .advance-filter .filter-box, .advance-displayfilter filter-box{
+        min-width: 375px;
+        width: 375px;
+    }
+/*    .advance-filter .filter-box, .advance-displayfilter filter-box{
+        overflow-x: scroll;
+        transform:inherit!important;
+    }*/
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center !important;
+    }
+    .page-tools-top .right-tools select.form-control, .page-tools-top .right-tools .select2-container{
+        width: 170px!important; 
+    }
+}

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Employee Payroll</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Select2 Bootstrap 4-->
+        <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+        <link href="vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">    
+
+        <!--Sweetalert2-->
+        <link rel="stylesheet" href="vendor/sweetalert2/dist/sweetalert2.min.css">
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+        <link href="css/cui-property.css" rel="stylesheet">
+        <link href="css/cui-filter.css" rel="stylesheet">
+
+        <link href="css/cui-timesheet.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <div class="page-header">
+                        <div class="page-heading-top">
+                            <!-- Page Heading -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <nav class="breadcrumb-custom" aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item"><a href="timesheet.html">Timesheet</a></li>
+                                        <li class="breadcrumb-item"><a href="employee-payroll.html">Timesheet Details</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Employee Payroll</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Area Chart -->
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <div class="card emp-details mb-3">
+                                            <div class="card-header bg-transparent">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="card-title text-dark mb-0">Employee Details</h5>
+                                                    <button type="button" class="btn btn-soft-blue">
+                                                        <i class="feather icon-edit"></i>
+                                                        Edit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-12 col-xl-8">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-12 col-xl-12">
+                                                                <div class="card shadow-sm mb-3">
+                                                                    <div class="card-body">
+                                                                        <div class="d-lg-flex align-items-center">
+                                                                            <div class="image"> <img src="img/faces/emp.png" alt="emp-image" class="rounded" width="150"> </div>
+                                                                            <div class="ml-md-3 w-100">
+                                                                                <div class="row">
+                                                                                    <div class="col-12">
+                                                                                        <h4 class="mb-0 mt-0 text-dark">Ricky Hunt</h4> 
+                                                                                        <span class="d-block"> 
+                                                                                            <span>
+                                                                                                Position  
+                                                                                            </span>
+                                                                                            <span>
+                                                                                                -
+                                                                                            </span>
+                                                                                            <span class="text-dark">
+                                                                                                Truck & Plow
+                                                                                            </span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-12">
+                                                                                        <div class="row my-2">
+                                                                                            <div class="col-12 col-md-6">
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Email
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            rickyhunt@gmail.com
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Phone Number
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            (425) 555-1212
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Gender 
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            Male
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Since  
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            09-Apr-1992
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-12 col-md-6 ">
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            DOB  
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            28-May-1996
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Address  
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            29280 North Park Blvd
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            Zip 
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            44139
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div class="d-block my-2">
+                                                                                                    <span class="d-block"> 
+                                                                                                        <span>
+                                                                                                            State  
+                                                                                                        </span>
+                                                                                                        <span>
+                                                                                                            -
+                                                                                                        </span>
+                                                                                                        <span class="text-dark">
+                                                                                                            OH
+                                                                                                        </span>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-4">
+                                                        <div class="card shadow-sm mb-3">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <h4 class="mb-0 mt-0 text-dark">Contractor Details</h4> 
+                                                                        <span class="d-block"> 
+                                                                            <span>
+                                                                                Active Contracts 
+                                                                            </span>
+                                                                            <span>
+                                                                                -
+                                                                            </span>
+                                                                            <span class="text-dark">
+                                                                                50
+                                                                            </span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row my-2">
+                                                                    <div class="col-12 col-md-12">
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Name
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    Brad  Simmons
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Email
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    bradsimmons@gmail.com
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Phone Number
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    (425) 8888-9999
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Address 
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    29280 North Park Blvd
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card active-contracts mb-3">
+                                            <div class="card-header bg-transparent">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="card-title text-dark mb-0">Active Contracts</h5>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <table id="responsive-data-table1" class="table table-bordered dt-responsive nowrap" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheckr">
+                                                                    <label class="custom-control-label" for="customCheckr">&nbsp; </label>
+                                                                </div>
+                                                            </th>
+                                                            <th>
+                                                                Contract Name
+                                                            </th>
+                                                            <th>
+                                                                Start Date
+                                                            </th>
+                                                            <th>
+                                                                End Date
+                                                            </th>
+                                                            <th>
+                                                                Reg. Hours
+                                                            </th>
+                                                            <th>
+                                                                OT. Hours
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheckta1">
+                                                                    <label class="custom-control-label" for="customCheckta1">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Post-Construction Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                25/06/2021
+                                                            </td>
+                                                            <td>
+                                                                12/08/2021
+                                                            </td>
+                                                            <td>
+                                                                40:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                10:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheckta2">
+                                                                    <label class="custom-control-label" for="customCheckta2">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Hard Surface Floor Care
+                                                            </td>
+                                                            <td>
+                                                                10/06/2021
+                                                            </td>
+                                                            <td>
+                                                                07/07/2021
+                                                            </td>
+                                                            <td>
+                                                                40:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                10:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheckta3">
+                                                                    <label class="custom-control-label" for="customCheckta3">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Vertical And Horizontal Blinds
+                                                            </td>
+                                                            <td>
+                                                                08/06/2021
+                                                            </td>
+                                                            <td>
+                                                                20/06/2021
+                                                            </td>
+                                                            <td>
+                                                                40:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                10:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheckta4">
+                                                                    <label class="custom-control-label" for="customCheckta4">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Water Damage Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                12/05/2021
+                                                            </td>
+                                                            <td>
+                                                                10/06/2021
+                                                            </td>
+                                                            <td>
+                                                                40:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                10:00 hrs
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="card ready-invoice mb-3">
+                                            <div class="card-header bg-transparent">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="card-title text-dark mb-0">Ready Invoice</h5>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <table id="responsive-data-table2" class="table table-bordered dt-responsive nowrap" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecka">
+                                                                    <label class="custom-control-label" for="customChecka">&nbsp; </label>
+                                                                </div>
+                                                            </th>
+                                                            <th>
+                                                                Billing's Profile
+                                                            </th>
+                                                            <th>
+                                                                Period
+                                                            </th>
+                                                            <th>
+                                                                Invoice No
+                                                            </th>
+                                                            <th>
+                                                                Amount
+                                                            </th>
+                                                            <th>
+                                                                Status
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktr1">
+                                                                    <label class="custom-control-label" for="customChecktr1">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Post-Construction Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                25/06/2021 - 12/08/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00001
+                                                            </td>
+                                                            <td>
+                                                                $ 5,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-danger">Due</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-check-circle"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktr2">
+                                                                    <label class="custom-control-label" for="customChecktr2">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Hard Surface Floor Care
+                                                            </td>
+                                                            <td>
+                                                                10/06/2021 - 07/07/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00001
+                                                            </td>
+                                                            <td>
+                                                                $ 7,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-danger">Due</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-check-circle"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktr3">
+                                                                    <label class="custom-control-label" for="customChecktr3">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Vertical And Horizontal Blinds
+                                                            </td>
+                                                            <td>
+                                                                08/06/2021 - 20/06/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00003
+                                                            </td>
+                                                            <td>
+                                                                $ 4,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-danger">Due</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-check-circle"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktr4">
+                                                                    <label class="custom-control-label" for="customChecktr4">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Water Damage Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                12/05/2021 - 10/06/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00004
+                                                            </td>
+                                                            <td>
+                                                                $ 3,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-danger">Due</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-check-circle"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="card ready-invoice mb-3">
+                                            <div class="card-header bg-transparent">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="card-title text-dark mb-0">Paid Invoice</h5>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <table id="responsive-data-table3" class="table table-bordered dt-responsive nowrap" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecka">
+                                                                    <label class="custom-control-label" for="customChecka">&nbsp; </label>
+                                                                </div>
+                                                            </th>
+                                                            <th>
+                                                                Billing's Profile
+                                                            </th>
+                                                            <th>
+                                                                Period
+                                                            </th>
+                                                            <th>
+                                                                Invoice No
+                                                            </th>
+                                                            <th>
+                                                                Amount
+                                                            </th>
+                                                            <th>
+                                                                Status
+                                                            </th>
+                                                            <th>
+                                                                Action
+                                                            </th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktp1">
+                                                                    <label class="custom-control-label" for="customChecktp1">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Post-Construction Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                25/06/2021 - 12/08/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00001
+                                                            </td>
+                                                            <td>
+                                                                $ 5,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-success">Paid</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-download"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktp2">
+                                                                    <label class="custom-control-label" for="customChecktp2">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Hard Surface Floor Care
+                                                            </td>
+                                                            <td>
+                                                                10/06/2021 - 07/07/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00001
+                                                            </td>
+                                                            <td>
+                                                                $ 7,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-success">Paid</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-download"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktp3">
+                                                                    <label class="custom-control-label" for="customChecktp3">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Vertical And Horizontal Blinds
+                                                            </td>
+                                                            <td>
+                                                                08/06/2021 - 20/06/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00003
+                                                            </td>
+                                                            <td>
+                                                                $ 4,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-success">Paid</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-download"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customChecktp4">
+                                                                    <label class="custom-control-label" for="customChecktp4">&nbsp; </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                Water Damage Clean-Up
+                                                            </td>
+                                                            <td>
+                                                                12/05/2021 - 10/06/2021
+                                                            </td>
+                                                            <td>
+                                                                INC-00004
+                                                            </td>
+                                                            <td>
+                                                                $ 3,00, 000
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge badge-success">Paid</span>
+                                                            </td>
+                                                            <td>
+                                                                <a role="button" href="#" class="btn btn-sm btn-green-soft" title="View">
+                                                                    <i class="feather icon-eye"></i>
+                                                                </a>
+                                                                <a role="button" href="#" class="btn btn-sm btn-soft-blue" title="Approved">
+                                                                    <i class="feather icon-download"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="card payroll-bank-details mb-3">
+                                            <div class="card-header bg-transparent">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="card-title text-dark mb-0">Payroll Details</h5>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="card shadow-sm mb-3">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-12 col-md-6">
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Base Monthly 
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    20, 50, 000
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Travel Allowance
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    $50/day
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    OT
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    at 50%:1612.76
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12 col-md-6">
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Hourly Rate
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    $200/hours
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Breakfast Allowance
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    $100/day
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    OT
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    at 75%:1881.56
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-6">
+                                                        <div class="card shadow-sm mb-3">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <h5 class="mb-3 mt-0 text-dark">Bank Details</h5> 
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Bank Name 
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    Bank of New York Mellon Corp.
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="d-block my-2">
+                                                                            <span class="d-block"> 
+                                                                                <span>
+                                                                                    Account Number 
+                                                                                </span>
+                                                                                <span>
+                                                                                    -
+                                                                                </span>
+                                                                                <span class="text-dark">
+                                                                                    011001234
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+        <!-- Select2 Bootstrap 4 -->
+        <script src="vendor/select2/js/select2.min.js"></script>
+        <script src="vendor/select2/js/select2-script.js"></script>
+
+        <!--Sweetalert2-->
+        <script src="vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="vendor/sweetalert2/dist/sweetalert2.js.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table1').DataTable({});
+                jQuery('#responsive-data-table2').DataTable({});
+                jQuery('#responsive-data-table3').DataTable({});
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Invoices Single Service</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Select2 Bootstrap 4-->
+        <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+        <link href="vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">    
+
+        <!--Sweetalert2-->
+        <link rel="stylesheet" href="vendor/sweetalert2/dist/sweetalert2.min.css">
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+        <link href="css/cui-property.css" rel="stylesheet">
+        <link href="css/cui-filter.css" rel="stylesheet">
+        <link href="css/cui-contractor.css" rel="stylesheet">
+        <link href="css/cui-invoice.css" rel="stylesheet">
+
+
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+                    <div class="page-header">
+                        <div class="page-heading-top">
+                            <!-- Page Heading -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <nav class="breadcrumb-custom" aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item"><a href="invoices-listing.html">Invoices</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Invoice Single Service</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Area Chart -->
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-sm-12 col-xl-9">
+                                                <div class="invoices-area">
+                                                    <div class="invoices-header">
+                                                        <div class="row">
+                                                            <div class="col-4 col-sm-4">
+                                                                <h2 class="m-0 text-black">
+                                                                    INVOICE
+                                                                </h2>
+                                                            </div>
+                                                            <div class="col-8 col-sm-8">
+                                                                <div class="comd-block text-right">
+                                                                    <h5 class="text-black">
+                                                                        CUI Management
+                                                                    </h5>
+                                                                    <address class="text-dark m-0">
+                                                                        4889 NEO Parkway<br/>
+                                                                        Garfield Heights, OH 44128
+                                                                    </address>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 border-top-head">
+                                                            <div class="col-3 col-md-3 col-lg-3">
+                                                                <h5 class="text-black text-uppercase">
+                                                                    Date
+                                                                </h5>
+                                                                <p>
+                                                                    July 12, 2021
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-3 col-md-3 col-lg-3">
+                                                                <h5 class="text-black text-uppercase">
+                                                                    INVOICE NO.
+                                                                </h5>
+                                                                <p>
+                                                                    INC-00001
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-3 col-md-3 col-lg-3">
+                                                                <h5 class="text-black text-uppercase">
+                                                                    Billed To
+                                                                </h5>
+                                                                <address class="m-0">
+                                                                    Darren Elder<br/>
+                                                                    806 Twin Willow Lane, Old Forge,<br/>
+                                                                    New York, USA
+                                                                </address>
+                                                            </div>
+                                                            <div class="col-3 col-md-3 col-lg-3">
+                                                                <h5 class="text-black text-uppercase">
+                                                                    Shipped To
+                                                                </h5>
+                                                                <address class="m-0">
+                                                                    Walter Roberson<br/>
+                                                                    299 Star Trek Drive, Panama City,<br/>
+                                                                    Florida, 32405, USA
+                                                                </address>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="invoice-middle">
+                                                    <table class="invoice-body" cellspacing="0" cellpadding="0" border="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="">Contract Name</th>
+                                                                <th class="">Hours</th>
+                                                                <th class="" style="text-align: right;">Rate</th>
+                                                                <th class="" style="text-align: right;">TOTAL</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="c-name">
+                                                                    <h6>Removing dirt, dust and debris</h6>
+                                                                </td>
+                                                                <td class="c-hours">40</td>
+                                                                <td class="c-rate" style="text-align: right;">$50, 000</td>
+                                                                <td class="c-total" style="text-align: right;">$20,00,000</td>
+                                                            </tr>
+                                                          
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="invoices-total">
+                                                    <div class="bank-details">
+                                                        <h5>
+                                                            BANK TRANSFER
+                                                        </h5>
+                                                        <p>
+                                                            <span class="bank-details-label">
+                                                                Bank Name  
+                                                            </span>
+                                                            <span>
+                                                                - 
+                                                            </span>
+                                                            <span class="bank-details-value">
+                                                                Bank of New York Mellon Corp.
+                                                            </span>
+                                                        </p>
+                                                        <p>
+                                                            <span class="bank-details-label">
+                                                                Account Number
+                                                            </span>
+                                                            <span>
+                                                                - 
+                                                            </span>
+                                                            <span class="bank-details-value">
+                                                                011001234
+                                                            </span>
+                                                        </p>
+                                                        <p>
+                                                            <span class="bank-details-label">
+                                                                Code:
+                                                            </span>
+                                                            <span>
+                                                                - 
+                                                            </span>
+                                                            <span class="bank-details-value">
+                                                                BARC0032US
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="invoice-single-grand-total">
+                                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="text-align: right;">TOTAL AMOUNT</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #F64E60;text-align: right;">$20,00,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align: right;">Taxes Included</td>
+                                                            </tr>
+                                                          
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <div class="note-and-pay">
+                                                    <div class="invoice-note">
+                                                        <h5>Note</h5>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim 
+                                                            veniam, quis Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                                                            cillum dolore eu fugiat nulla
+                                                        </p>
+                                                    </div>
+                                                    <div class="invoice-pay">
+                                                        <button type="button" class="paybutton">
+                                                            Pay Now
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="print-and-downlaod">
+                                                    <div class="invoice-print">
+                                                        <button type="button" class="downloadbutton">
+                                                            Download Invoice
+                                                        </button>
+                                                    </div>
+                                                    <div class="invoice-download">
+                                                        <button type="button" class="printbutton">
+                                                            Print Invoice
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+        <!-- Select2 Bootstrap 4-->
+        <script src="vendor/select2/js/select2.min.js"></script>
+        <script src="vendor/select2/js/select2-script.js"></script>
+
+        <!--Sweetalert2-->
+        <script src="vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="vendor/sweetalert2/dist/sweetalert2.js.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.area').slimscroll({
+                    height: '180px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>

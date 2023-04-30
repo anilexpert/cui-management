@@ -1,0 +1,75 @@
+.timesheet-card .card-title {
+    font-size: 16px;
+    color: #303030;
+    margin: 0;
+    font-weight: 600;
+}
+.symbol.symbol-circle, .symbol.symbol-circle 
+.symbol-label, .symbol.symbol-circle > img {
+    border-radius: 50%;
+}
+.symbol {
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 1.15rem;
+}
+.symbol-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 10px;
+}
+.symbol.symbol-34px > img{
+    width: 34px;
+    height: 34px;
+}
+.symbol > img {
+    width: 100%;
+    flex-shrink: 0;
+    display: inline-block;
+    border-radius: 1.15rem;
+}
+.total-employee .emp-number{
+    font-size: 16px;
+    font-weight: 600;
+    color: #303030;
+}
+.view-details a{
+    font-size: 16px;
+    color: #3170B1;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: none;
+}
+.view-details a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3170B1;
+    transition: width .3s;
+}
+
+.view-details a:hover::after {
+    width: 100%;
+    /*transition: width .3s;*/
+}
+
+
+/*Employee Payroll details*/
+
+
+/*.v-right-divider{
+    position: relative;
+}
+.v-right-divider:after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #B8B8B8;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 25%;
+}*/

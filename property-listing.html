@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Property - Dashboard</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Select2 Bootstrap 4-->
+        <link href="vendor/select2/css/select2.min.css" rel="stylesheet">
+        <link href="vendor/select2/css/select2-bootstrap4.min.css" rel="stylesheet">    
+
+        <!--sweetalert2-->
+        <link rel="stylesheet" href="vendor/sweetalert2/dist/sweetalert2.min.css">
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+        <link href="css/cui-property.css" rel="stylesheet">
+        <link href="css/cui-filter.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+                    <div class="page-header">
+                        <div class="page-heading-top">
+                            <!-- Page Heading -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="page-heading my-1">
+                                    <h1 class="h5 mb-0 text-gray-800">Properties </h1>
+                                </div>
+                                <div class="page-tools-right my-1">
+                                    <a href="add-property.html" class="btn btn-sm btn-primary">
+                                        <i class="feather icon-plus-circle"></i>
+                                        Add Property
+                                    </a>
+                                    <div class="dropdown no-arrow d-inline-block">
+                                        <button class="btn btn-soft-blue btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Save All</a>
+                                            <a class="dropdown-item" href="#">My Default</a>
+                                            <a class="dropdown-item" href="#">Reset Advance Search</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-tools-top">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="left-tools my-2">
+                                    <div id="adv-filter" class="d-inline-block mr-2 advance-filter" >
+                                        <div class="dropdown no-arrow">
+                                            <button type="button" class="btn btn-sm btn-soft-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="feather icon-filter"></i>
+                                            </button>  
+                                            <div class="dropdown-menu" role="menu">
+                                                <div class="filter-box">
+                                                    <div class="filter-header bg-light p-3">
+                                                        <h5 class="mb-0 text-dark">Filter</h5>
+                                                    </div>
+                                                    <div class="filter-body">
+                                                        <form>
+                                                            <div class="form-group form-row">
+                                                                <div class="col-12 col-md-6">
+                                                                    <label for="condition">Condition [Optional]</label>
+                                                                    <input type="text" class="form-control" id="condition" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="adv-filter-table d-block">
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>#Order</th>
+                                                                                <th>Field Name</th>
+                                                                                <th>Filter Type</th>
+                                                                                <th>Value</th>
+                                                                                <th>Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>#1</td>
+                                                                                <td>Active</td>
+                                                                                <td>
+                                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                                        <option ></option>
+                                                                                        <option>Featured</option>
+                                                                                        <option>Most Popular</option>
+                                                                                        <option>Most Commented</option>
+                                                                                        <option>Most Liked</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                                        <option ></option>
+                                                                                        <option>Yes</option>
+                                                                                        <option>No</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <th>
+                                                                                    <button type="button" class="btn btn-red-soft">
+                                                                                        <i class="feather icon-trash"></i>
+                                                                                    </button>
+                                                                                </th>
+                                                                            </tr>
+                                                                        <tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group form-row">
+                                                                <div class="col-12 col-md-6">
+                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                        <option></option>
+                                                                        <option>All Snippets</option>
+                                                                        <option>Featured</option>
+                                                                        <option>Most Popular</option>
+                                                                        <option>Most Commented</option>
+                                                                        <option>Most Liked</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>   
+                                                    </div>                         
+
+                                                    <div class="filter-footer bg-light p-3">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-inline-block">
+                                                                <button type="button" class="btn btn-sm btn-red-soft">
+                                                                    Clear All
+                                                                </button>
+                                                            </div>
+                                                            <div class="d-inline-block">
+                                                                <button type="button" class="btn btn-sm btn-danger">
+                                                                    Cancel
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-primary">
+                                                                    Apply
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="adv-display" class="d-inline-block mr-2 advance-displayfilter" >
+                                        <div class="dropdown no-arrow">
+                                            <button type="button" class="btn btn-sm btn-soft-blue dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="feather icon-grid"></i>
+                                            </button>  
+                                            <div class="dropdown-menu" role="menu">
+                                                <div class="filter-box">
+                                                    <div class="filter-header bg-light p-3">
+                                                        <h5 class="mb-0 text-dark">Display</h5>
+                                                    </div>
+                                                    <div class="filter-body">
+                                                        <form>
+                                                            <div class="adv-filter-table d-block" >
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>#Order</th>
+                                                                                <th>Field Name</th>
+                                                                                <th>Display</th>
+                                                                                <th>Format</th>
+                                                                                <th>Total</th>
+                                                                                <th>Freeze</th>
+                                                                                <th>Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>#1</td>
+                                                                                <td>
+                                                                                    Property Name
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="prpertyname" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="format" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                                        <option ></option>
+                                                                                        <option>Featured</option>
+                                                                                        <option>Most Popular</option>
+                                                                                        <option>Most Commented</option>
+                                                                                        <option>Most Liked</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                                        <label class="custom-control-label" for="customCheck1">&nbsp;</label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <th>
+                                                                                    <button type="button" class="btn btn-red-soft">
+                                                                                        <i class="feather icon-trash"></i>
+                                                                                    </button>
+                                                                                </th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>#2</td>
+                                                                                <td>
+                                                                                    Company Name
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="companyname" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="format" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                                        <option ></option>
+                                                                                        <option>Featured</option>
+                                                                                        <option>Most Popular</option>
+                                                                                        <option>Most Commented</option>
+                                                                                        <option>Most Liked</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                                        <label class="custom-control-label" for="customCheck2">&nbsp;</label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <th>
+                                                                                    <button type="button" class="btn btn-red-soft">
+                                                                                        <i class="feather icon-trash"></i>
+                                                                                    </button>
+                                                                                </th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>#3</td>
+                                                                                <td>
+                                                                                    Primary Contact
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="primarycontact" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <input type="text" name="format" class="form-control form-control-sm">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                                        <option ></option>
+                                                                                        <option>Featured</option>
+                                                                                        <option>Most Popular</option>
+                                                                                        <option>Most Commented</option>
+                                                                                        <option>Most Liked</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                                        <label class="custom-control-label" for="customCheck3">&nbsp;</label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <th>
+                                                                                    <button type="button" class="btn btn-red-soft">
+                                                                                        <i class="feather icon-trash"></i>
+                                                                                    </button>
+                                                                                </th>
+                                                                            </tr>
+                                                                        <tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group form-row">
+                                                                <div class="col-12 col-md-6">
+                                                                    <select class="form-control form-control-sm" data-placeholder="Choose one.." data-allow-clear="1">
+                                                                        <option></option>
+                                                                        <option>All Snippets</option>
+                                                                        <option>Featured</option>
+                                                                        <option>Most Popular</option>
+                                                                        <option>Most Commented</option>
+                                                                        <option>Most Liked</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </form>   
+                                                    </div>                         
+
+                                                    <div class="filter-footer bg-light p-3">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-inline-block">
+                                                                <button type="button" class="btn btn-sm btn-red-soft">
+                                                                    Clear All
+                                                                </button>
+                                                            </div>
+                                                            <div class="d-inline-block">
+                                                                <button type="button" class="btn btn-sm btn-danger">
+                                                                    Cancel
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-primary">
+                                                                    Apply
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--                                    <div class="dropdown no-arrow d-inline-block mr-2">
+                                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Display">
+                                                                                <i class="feather icon-grid"></i>
+                                                                            </button>
+                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                                <a class="dropdown-item" href="#">Action1</a>
+                                                                                <a class="dropdown-item" href="#">Action2</a>
+                                                                                <a class="dropdown-item" href="#">Action3</a>
+                                                                            </div>
+                                                                        </div>-->
+                                    <div class="d-inline-block mr-2">
+                                        <button class="btn btn-sm btn-soft-blue" type="button" id="dropdownMenuButton" title="Refresh">
+                                            <i class="feather icon-refresh-cw"></i>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown no-arrow d-inline-block mr-2">
+                                        <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-sitemap"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action1</a>
+                                            <a class="dropdown-item" href="#">Action2</a>
+                                            <a class="dropdown-item" href="#">Action3</a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown no-arrow d-inline-block mr-2">
+                                        <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="feather icon-download"></i>
+                                            Export
+                                        </button>
+                                        <div class="dropdown-menu export-list" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">
+                                                <i class="feather icon-printer"></i>
+                                                <span class="ml-2 d-inline-block">Print</span>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="feather icon-copy"></i>
+                                                <span class="ml-2 d-inline-block">Copy</span>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="far fa-file-excel"></i>
+                                                <span class="ml-2 d-inline-block">Excel</span>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="feather icon-file-text"></i>
+                                                <span class="ml-2 d-inline-block">CSV</span>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="far fa-file-pdf"></i>
+                                                <span class="ml-2 d-inline-block">PDF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-tools my-2">
+                                    <div class="form-inline">
+                                        <select class="form-control form-control-sm mr-2">
+                                            <option selected="">Bulk Action</option>
+                                            <option value="1">Change Branch</option>
+                                            <option value="2">Change Account Owner</option>
+                                            <option value="3">Change Primary COnatct</option>
+                                        </select>
+                                        <select class="form-control form-control-sm ml-2">
+                                            <option value="0">Default search sysytem</option>
+                                            <option value="1">Default search sysytem1</option>
+                                            <option value="2">Default search sysytem2</option>
+                                            <option value="3">Default search sysytem3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Area Chart -->
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <!--<table class="table table-bordered myTable" width="100%" cellspacing="0">-->
+                                        <table id="responsive-data-table" class="table dt-responsive nowrap" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-Pall">
+                                                            <label class="custom-control-label" for="customCheck-Pall">&nbsp; </label>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        Property Name
+                                                    </th>
+                                                    <th>
+                                                        Property Status
+                                                    </th>
+                                                    <th>
+                                                        Account Owner
+                                                    </th>
+                                                    <th>
+                                                        Address1
+                                                    </th>
+                                                    <th>
+                                                        Billing Contact
+                                                    </th>
+                                                    <th>
+                                                        Primary Contact
+                                                    </th>
+                                                    <th>
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P1">
+                                                            <label class="custom-control-label" for="customCheck-P1">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        1615 Bridget Lane
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>1615 Bridget Lane</td>
+                                                    <td>Mike Carmer</td>
+                                                    <td>Mike Carmer</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-red-soft" data-toggle="sweet-alert" data-sweet-alert="confirm">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P2">
+                                                            <label class="custom-control-label" for="customCheck-P2">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        1635 Curry Dr
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>1615 Bridget Lane</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P3">
+                                                            <label class="custom-control-label" for="customCheck-P3">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        5232 Farnhurst Rd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>5232 Farnhurst Rd</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P4">
+                                                            <label class="custom-control-label" for="customCheck-P4">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        29280 North Park Blvd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 29280 North Park Blvd</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P5">
+                                                            <label class="custom-control-label" for="customCheck-P5">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        3128 Glenbrook Dr.
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 3128 Glenbrook Dr.</td>
+                                                    <td>David Richards</td>
+                                                    <td>David Richards</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P6">
+                                                            <label class="custom-control-label" for="customCheck-P6">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        1635 Curry Dr
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>1615 Bridget Lane</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P7">
+                                                            <label class="custom-control-label" for="customCheck-P7">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        5232 Farnhurst Rd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>5232 Farnhurst Rd</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P8">
+                                                            <label class="custom-control-label" for="customCheck-P8">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        29280 North Park Blvd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 29280 North Park Blvd</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P9">
+                                                            <label class="custom-control-label" for="customCheck-P9">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        3128 Glenbrook Dr.
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 3128 Glenbrook Dr.</td>
+                                                    <td>David Richards</td>
+                                                    <td>David Richards</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P10">
+                                                            <label class="custom-control-label" for="customCheck-P10">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        5232 Farnhurst Rd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td>5232 Farnhurst Rd</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>Sean Sanders</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P11">
+                                                            <label class="custom-control-label" for="customCheck-P11">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        29280 North Park Blvd
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 29280 North Park Blvd</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>Lawrence Barrett</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck-P12">
+                                                            <label class="custom-control-label" for="customCheck-P12">&nbsp; </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        3128 Glenbrook Dr.
+                                                    </td>
+                                                    <td>Customer</td>
+                                                    <td>Adam Clark</td>
+                                                    <td> 3128 Glenbrook Dr.</td>
+                                                    <td>David Richards</td>
+                                                    <td>David Richards</td>
+                                                    <td>
+                                                        <a href="property-detail.html" role="button" class="btn btn-sm btn-green-soft">
+                                                            <i class="feather icon-eye"></i>
+                                                        </a>
+                                                        <a href="edit-property.html" role="button" class="btn btn-sm btn-yellow-soft">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button class="btn btn-sm btn-red-soft">
+                                                            <i class="feather icon-trash"></i>
+                                                        </button>
+                                                        <div class="dropdown no-arrow d-inline-block">
+                                                            <button class="btn btn-sm btn-soft-blue dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">Option1</a>
+                                                                <a class="dropdown-item" href="#">Option2</a>
+                                                                <a class="dropdown-item" href="#">Option3</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+        <!-- Select2 Bootstrap 4-->
+        <script src="vendor/select2/js/select2.min.js"></script>
+        <script src="vendor/select2/js/select2-script.js"></script>
+
+        <!--sweetalert2-->
+        <script src="vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="vendor/sweetalert2/dist/sweetalert2.js.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.area').slimscroll({
+                    height: '180px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>

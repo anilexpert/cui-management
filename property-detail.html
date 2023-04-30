@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Property Detail - Dashboard</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="fonts/feather/css/feather.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="css/cui-admin.css" rel="stylesheet">
+        <link href="css/cui-custom.css" rel="stylesheet">
+        <link href="css/cui-property.css" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="vendor/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+
+    </head>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sb-sidenav-menubar">
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                    <li>
+                        <!-- Sidebar - Brand -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                            <img src="img/torando-logo-lg.png" class="img-fluid" alt="logo">
+                        </a>
+                    </li>
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html" >
+                            <i class="feather icon-grid" data-toggle="tooltip" data-placement="right" title="Dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-users" data-toggle="tooltip" data-placement="right" title="Users"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html" >
+                            <i class="far fa-address-card" data-toggle="tooltip" data-placement="right" title="Contact"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="property-listing.html" >
+                            <i class="far fa-building" data-toggle="tooltip" data-placement="right" title="Property"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contractor-listing.html" >
+                            <i class="fas fa-hard-hat" data-toggle="tooltip" data-placement="right" title="Contractor"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="contracts-listing.html" >
+                            <i class="feather icon-clipboard" data-toggle="tooltip" data-placement="right" title="Contracts"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-calendar" data-toggle="tooltip" data-placement="right" title="Calendar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-pie-chart" data-toggle="tooltip" data-placement="right" title="Chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-file" data-toggle="tooltip" data-placement="right" title="Reports"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="fas fa-receipt" data-toggle="tooltip" data-placement="right" title="Invoices"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" >
+                            <i class="feather icon-settings" data-toggle="tooltip" data-placement="right" title="Settings"></i>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar fixed-top">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <!-- Topbar Search -->
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                     aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                   placeholder="Search for..." aria-label="Search"
+                                                   aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="img/faces/avatar-2.jpg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-settings mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="feather icon-mail mr-2 text-gray-400"></i>
+                                        My Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="feather icon-lock mr-2 text-gray-400"></i>
+                                        Lock Screen
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                            </li>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <div class="page-header">
+                        <div class="page-heading-top">
+                            <!-- Page Heading -->
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="page-heading my-1">
+                                    <h1 class="h5 mb-0 text-gray-800">Property Details </h1>
+                                </div>
+                                <div class="page-tools-right my-1">
+                                    <a href="contacts.html" class="btn btn-sm btn-primary">
+                                        <!--<i class="feather icon-plus-circle"></i>-->
+                                        Contact Logs
+                                    </a>
+                                    <div class="dropdown no-arrow d-inline-block">
+                                        <button class="btn btn-soft-blue btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action1</a>
+                                            <a class="dropdown-item" href="#">Action2</a>
+                                            <a class="dropdown-item" href="#">Action3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Content Row -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header property-details-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-7">
+                                                <div class="property-loaction">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-inline-block border-right border-secondary pr-3">
+                                                            <h3 class="text-dark font-weight-light mb-0">
+                                                                1615 Bridget Ln
+                                                            </h3>
+                                                            <p class="text-secondary font-weight-light mb-0">Twinsburg, OH 44087 </p>
+                                                        </div>
+                                                        <div class="d-inline-block pl-3">
+                                                            <h3 class="text-theme-color font-weight-light mb-0">
+                                                                PR-457985
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-5 text-right">
+                                                <div class="btnsclik">
+                                                    <button class="btn btn-sm btn-soft-blue" id="listview" type="button">
+                                                        <i class="feather icon-grid"></i>
+                                                        <span class="ml-2">List</span>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-soft-blue" id="gridview" type="button">
+                                                        <i class="feather icon-list"></i>
+                                                        <span class="ml-2">Grid</span>
+                                                    </button>
+                                                </div>
+                                                <!--<a class="btn btn-sm btn-primary" href="#" target="_blank"><i class="feather icon-map mr-1"></i> Open on Google Maps</a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6 mb-3">
+                                                <div class="card custom-card mb-3">
+                                                    <div class="card-header">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-7">
+                                                                <h6 class="mb-0">
+                                                                    Quick Overview Information
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-12">
+                                                                <div class="property_box">
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/owner.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Account Owner</h6>
+                                                                        </div>
+                                                                        <p>Adam Clark</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/account.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Account</h6>
+                                                                        </div>
+                                                                        <p> 1615 Bridget Lane</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/value-land.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Earned Revenue</h6>
+                                                                        </div>
+                                                                        <p> $1000.00 </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/scale.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Account Balance</h6>
+                                                                        </div>
+                                                                        <p>$600.00 </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/scale.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Gross Margin</h6>
+                                                                        </div>
+                                                                        <p>$800.00</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card custom-card mb-3">
+                                                    <div class="card-header">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-7">
+                                                                <h6 class="mb-0">
+                                                                    Contact Information
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-12">
+                                                                <div class="property_box">
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/account.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Primary Contact</h6>
+                                                                        </div>
+                                                                        <p>Mike Carmer</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/value-land.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Billing Contact</h6>
+                                                                        </div>
+                                                                        <p> Sean Sanders</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/account.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Other Contact</h6>
+                                                                        </div>
+                                                                        <p>David Richards</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6 mb-3">
+                                                <div class="card custom-card mb-3">
+                                                    <div class="card-header">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-7">
+                                                                <h6 class="mb-0">
+                                                                    General Account Information
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-12">
+                                                                <div class="property_box scroll-area">
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/property.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Property Name</h6>
+                                                                        </div>
+                                                                        <p> 1615 Bridget Lane</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/property.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Property Name Abr</h6>
+                                                                        </div>
+                                                                        <p> 1615 Bridget Lane </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/address.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Address 1</h6>
+                                                                        </div>
+                                                                        <p>1615 Bridget Lane </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/address.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Address 2</h6>
+                                                                        </div>
+                                                                        <p>1615 Bridget Lane </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/account.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Property Status</h6>
+                                                                        </div>
+                                                                        <p> Customer </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>City</h6>
+                                                                        </div>
+                                                                        <p>Twinsburg</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/state.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>State</h6>
+                                                                        </div>
+                                                                        <p>OH</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/zip-code.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Zip</h6>
+                                                                        </div>
+                                                                        <p>44087</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>County</h6>
+                                                                        </div>
+                                                                        <p>#REF!</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Industry Name</h6>
+                                                                        </div>
+                                                                        <p>Residential</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Property Notes</h6>
+                                                                        </div>
+
+                                                                        <p> 
+                                                                            <span class="text-ellipsis">
+                                                                                Be carefull not to scalp area to right of driveway, use a push mower or string trimmer. Edge Driveway & sidewalk once a month with metal blade
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/note.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Operation Notes</h6>
+                                                                        </div>
+                                                                        <p>Gate Code 2030</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/invoice.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Paperless Invoices</h6>
+                                                                        </div>
+                                                                        <p>1</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/value-land.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Payment Terms</h6>
+                                                                        </div>
+                                                                        <p>Net 30</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/invoice.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Separate Invoices</h6>
+                                                                        </div>
+                                                                        <p>Yes</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Building Code / District</h6>
+                                                                        </div>
+                                                                        <p>1547/OHH</p>
+                                                                    </div>
+                                                                    <div class="details_list_box">
+                                                                        <div class="titlimg">
+                                                                            <img src="img/property/city.svg" class="img-fluid" alt="image"> 
+                                                                            <h6>Building Cost Center</h6>
+                                                                        </div>
+                                                                        <p>-</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 mb-3">
+                                <div class="card shadow-sm h-100 border-0">
+                                    <div class="card-body p-0">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            <div class="col-xl-6 col-lg-6 mb-4">
+                                                            <div class="card shadow-sm h-100">
+                                                                <div class="card-body p-0">
+                                                                    <div class="card custom-card border-0">
+                                                                        <div class="card-header">
+                                                                            <h6 class="card-title mb-0">
+                                                                                Reports
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="reports-list reports-scroll-area">
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Property Detail Report</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        <i class="fa fa-download"></i>
+                                                                                        Download
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Separate Invoices</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        <i class="fa fa-download"></i>
+                                                                                        Download
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Paperless Invoices</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        <i class="fa fa-download"></i>
+                                                                                        Download
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Total View Report</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        Check Availability
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Earned Revenue</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        Check Availability
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="d-flex justify-content-between align-items-center bordr">
+                                                                                    <h6>Account Balance</h6>
+                                                                                    <a href="javascript:void()"  class="btn btn-sm btn-soft-blue">
+                                                                                        Check Availability
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Ready to Leave?</h6>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/moment.min.js"></script>
+
+        <!-- Slimscroll plugins -->
+        <script src="vendor/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="vendor/jquery-slimscroll/slimscroll.js"></script>
+
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.responsive.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/cui-admin.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('.myTable').DataTable({
+                    responsive: true
+                });
+                $('.scroll-area').slimscroll({
+                    height: '626px'
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('#responsive-data-table').DataTable({
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>

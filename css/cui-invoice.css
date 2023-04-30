@@ -1,0 +1,211 @@
+.invoices-area{
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+}
+.invoices-header{
+    background-color: #CEE6FF;
+    padding: 40px;
+    width: 100%;
+}
+.text-black{
+    color: #0F0F0F;
+}
+.border-top-head{
+    border-top: solid 1px #97BFE9;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.invoice-middle{
+    padding:0 40px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.invoice-body {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.invoice-body thead tr th{
+    font-size: 18px;
+    color: #656565;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: solid 1px #D4D4D4;
+}
+.invoice-body tbody tr td{
+    font-size: 16px;
+    color: #1C1C1C;
+    font-weight: 600;
+    padding-top: 20px;
+}
+.c-total{
+    color: #F64E60!important;
+}
+.invoice-body tfoot tr td{
+    padding-top: 20px;
+}
+.invoices-total{
+    background-color: #F5F5F5;
+    border-radius: 6px;
+    padding: 40px;
+    overflow: hidden;
+}
+.invoice-grand-total{
+    width: 40%;float: right;
+}
+.invoice-single-grand-total{
+    float: right;
+}
+.bank-details{
+    float: left;
+}
+.invoice-total{
+    float: right;
+}
+.invoice-grand-total table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.invoice-grand-total table tr td{
+    padding: 10px 0;
+    font-size: 16px;
+}
+.invoice-grand-total table tr:last-child td, .invoice-single-grand-total table tr:nth-last-child(2) td{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.grand-total{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.bank-details h5{
+    color: #1C1C1C;
+}
+.bank-details p{
+    margin-top: 20px;
+    padding-bottom: 0px;
+}
+.bank-details-label{
+    color: #656565;
+}
+.bank-details-value{
+    color: #303030;
+}
+
+.note-and-pay{
+    background-color: #fff;
+    padding: 40px;
+    overflow: hidden;
+}
+.invoice-note{
+    float: left;
+    width: 40%;
+}
+.invoice-note h5{
+    color: #1C1C1C;
+}
+.invoice-pay{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.paybutton{
+    background-color: #31B200;
+    border:solid 1px #31B200; 
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.print-and-downlaod{
+    background-color: #F5F5F5;
+    padding: 40px;
+    overflow: hidden;
+}
+.invoice-print{
+    float: left;
+    width: 50%; 
+}
+.invoice-download{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.downloadbutton{
+    background-color: #DCE3F8;
+    border:solid 1px #DCE3F8; 
+    color: #3170B1;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.printbutton{
+    background-color: #3170B1;
+    border:solid 1px #3170B1; 
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+@media print {
+    .invoices-header{
+        padding: 14px;
+        background: #CEE6FF !important;
+        -webkit-print-color-adjust: exact;
+        color: #656565;
+    }
+    .invoices-total, .print-and-downlaod{
+        background-color: #F5F5F5 !important;
+        -webkit-print-color-adjust: exact;
+        padding: 14px;
+
+    }
+    .invoice-middle, .note-and-pay{
+        padding:0 14px;
+        background-color: #fff !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .invoice-body thead tr th, .invoice-grand-total table tr:last-child td,
+    .invoice-note h5{
+        font-size: 14px !important;
+    }
+    .invoice-body tbody tr td, .invoice-grand-total table tr td, .invoice-body h6{
+        font-size: 13px;
+    }
+    .invoice-grand-total{
+        width: 35%;
+    }
+
+}
+@media screen and (max-width:1024px) {
+    .invoices-header, .invoices-total, .invoice-middle
+    {
+        padding:14px !important;
+    }
+    .invoices-header h2{
+        font-size: 24px;
+    }
+    .invoice-body thead tr th,  .bank-details h5, 
+    .invoice-grand-total table tr:last-child td,
+    .invoice-note h5{
+        font-size: 14px !important;
+    }
+    .invoices-header address, .invoices-header p,
+    .invoice-grand-total table tr td, .bank-details p,
+    .invoice-body tbody tr td, .invoices-header h5, .invoice-body h6{
+        font-size: 12px; 
+    }
+    .invoice-grand-total{
+        width: 35%;
+    }
+
+}

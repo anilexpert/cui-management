@@ -1,0 +1,63 @@
+.add-contacts-accordion .card-header a, .custom-blue-card .card-header a,
+.custom-blue-card .card-header h5, .custom-blue-card .card-header h6,
+.custom-blue-card .card-header{
+    background-color: #4e73df;
+    color: #fff;
+    margin: 0;
+}
+.add-contacts-accordion .card-header a:hover, .custom-blue-card .card-header a:hover{
+    text-decoration: none;
+}
+.employee-details{
+    position: relative;
+}
+.employee-details .card-heading {
+    display: inline-block;
+    margin-bottom: 20px;
+    position: absolute;
+    top: -15px;
+    background-color: #fff;
+    padding: 2px 6px;
+}
+.employee-details .c-details,
+.c-details{
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    padding: 24px 24px;
+}
+.c-details .c-value, .c-value{
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.c-details .c-label, .c-label{
+    font-size: 13px;
+    color: #7C7C7C;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.bg-light-gray{
+    background-color: #F9F9F9;
+}
+.password-eye a{
+    color: #666;
+    font-size: 12px;
+}
+.password-eye a{
+    text-decoration: none;
+}
+@media (max-width: 767px) {
+    .employee-details .c-details, .c-details {
+        padding: 12px 14px;
+    }
+    .c-icon img{
+        max-height: 24px;
+    }
+    .c-details .c-value, .c-value {
+        font-size: 14px;
+    }
+    .c-details .c-label, .c-label {
+        font-size: 12px;
+    }
+}
